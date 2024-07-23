@@ -18,9 +18,9 @@ func MinKeyValue(m map[string]int) (string, error) {
 }
 
 func CharCount(s string) map[string]int {
-	var words map[string]int
+	// var words map[string]int
 
-	//words := make(map[string]int) //same here
+	words := make(map[string]int) //same here
 	for _, word := range s {
 		sw := string(word)
 		v, ok := words[sw]
