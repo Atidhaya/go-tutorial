@@ -63,7 +63,6 @@ func getTopThreeWords(countedWords map[string]int) (TopThreeWords, error) {
 	for key := range countedWords {
 		keys = append(keys, key)
 	}
-	fmt.Println(keys)
 	// sort the list of words using occurances from countedWords mapping
 	sort.Slice(keys, func(i, j int) bool { return countedWords[keys[i]] > countedWords[keys[j]] })
 
@@ -80,6 +79,5 @@ func CalculateTopThree(fname string) (TopThreeWords, error) {
 		return TopThreeWords{}, error
 	}
 	var countedWords map[string]int = wordCount(fileContent)
-	fmt.Println(countedWords)
 	return getTopThreeWords(countedWords)
 }
